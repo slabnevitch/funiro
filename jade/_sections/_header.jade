@@ -1,0 +1,43 @@
+header.header
+	.header__wrapper
+		.header__container.wrapper
+			.header__body
+				.header__main
+					a(href="#").header__logo Funiro.
+					.header__menu.menu
+						nav.menu__body
+							- var menu = ['Products', 'Rooms'];
+							ul.menu__list.accordion
+								each item in menu
+									li.menu__item.accordion__item
+										a.menu__link(href="#")= item
+										button.accordion__link.menu__arrow.icon.icon-arrow-down(type="button")
+										ul.menu__sub-list.accordion__content
+											- for (var i=0; i < 4; i++)
+												li.menu__sub-item
+													a(href='#').menu__sub-link= 'Product №' + (i+1)
+
+								li.menu__item
+									a.menu__link(href="#") Inspirations
+
+				.header__search
+					.search-form
+						button(type="button").search-form__icon.icon.icon-search
+						form.search-form__form
+							button(type="submit").search-form__btn.icon.icon-search
+							input(type="text" autocomplete="off" placeholder="Search for minimalist chair").search-form__input
+
+				.header__actions.actions-header
+					a(href="").actions-header__item.actions-header__item--favorites.icon.icon-favorite
+					
+					.actions-header__item.cart-header
+						a(href="#").cart-header__icon.icon.icon-cart
+							span 2
+						.cart-header__body
+							ul.cart-header__list.cart-list
+
+					a(href="").actions-header__item.actions-header__item--user._fit
+						img._fit-img(src="img/avatar.jpg" alt="ava")
+
+				.toggle-mnu
+					span

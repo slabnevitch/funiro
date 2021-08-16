@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <meta name="description" content="">
+    <link rel="icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__container wrapper">
+          <div class="header__body">
+            <div class="header__main"><a href="#" class="header__logo">Funiro.</a>
+              <div class="header__menu menu">
+                <nav class="menu__body">
+                  <ul class="menu__list accordion">
+                    <li class="menu__item accordion__item"><a href="#" class="menu__link">Products</a>
+                      <button type="button" class="accordion__link menu__arrow icon icon-arrow-down"></button>
+                      <ul class="menu__sub-list accordion__content">
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №1</a></li>
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №2</a></li>
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №3</a></li>
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №4</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu__item accordion__item"><a href="#" class="menu__link">Rooms</a>
+                      <button type="button" class="accordion__link menu__arrow icon icon-arrow-down"></button>
+                      <ul class="menu__sub-list accordion__content">
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №1</a></li>
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №2</a></li>
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №3</a></li>
+                        <li class="menu__sub-item"><a href="#" class="menu__sub-link">Product №4</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu__item"><a href="#" class="menu__link">Inspirations</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="header__search">
+              <div class="search-form">
+                <button type="button" class="search-form__icon icon icon-search"></button>
+                <form class="search-form__form">
+                  <button type="submit" class="search-form__btn icon icon-search"></button>
+                  <input type="text" autocomplete="off" placeholder="Search for minimalist chair" class="search-form__input">
+                </form>
+              </div>
+            </div>
+            <div class="header__actions actions-header"><a href="" class="actions-header__item actions-header__item--favorites icon icon-favorite"></a>
+              <div class="actions-header__item cart-header"><a href="#" class="cart-header__icon icon icon-cart"><span>2</span></a>
+                <div class="cart-header__body">
+                  <ul class="cart-header__list cart-list"></ul>
+                </div>
+              </div><a href="" class="actions-header__item actions-header__item--user _fit"><img src="img/avatar.jpg" alt="ava" class="_fit-img"></a>
+            </div>
+            <div class="toggle-mnu"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <footer>
+      <div class="footer__container wrapper">
+        <div class="footer__body">
+          <div class="footer__main"><span class="footer__logo footer__title">Funiro.</span>
+            <div class="footer__text">Worldwide furnityre store since 2020. We sell over 100+ brancded products on our website</div>
+            <div class="footer__contacts contacts-footer">
+              <div class="contacts-footer__item icon-location">Sawojajar Malang, Indonesia</div>
+              <div class="contacts-footer__item icon-phone">+ 6289 456 3455</div>
+              <div class="contacts-footer__item">www.funiro.com</div>
+            </div>
+          </div>
+          <div class="footer__menu menu-footer">
+            <div class="menu-footer__column">
+              <div class="footer__title">Menu</div>
+              <ul class="menu-footer__list">
+                <li><a href="" class="menu-footer__link">products</a></li>
+                <li><a href="" class="menu-footer__link">rooms</a></li>
+                <li><a href="" class="menu-footer__link">inspirations</a></li>
+                <li><a href="" class="menu-footer__link">about us</a></li>
+                <li><a href="" class="menu-footer__link">terms &amp; policy</a></li>
+              </ul>
+            </div>
+            <div class="menu-footer__column">
+              <div class="footer__title">Account</div>
+              <ul class="menu-footer__list">
+                <li><a href="" class="menu-footer__link">my account</a></li>
+                <li><a href="" class="menu-footer__link">checkout</a></li>
+                <li><a href="" class="menu-footer__link">my cart</a></li>
+                <li><a href="" class="menu-footer__link">my catalog</a></li>
+              </ul>
+            </div>
+            <div class="menu-footer__column">
+              <div class="footer__title">Stay Connected</div>
+              <ul class="menu-footer__list">
+                <li><a href="" class="menu-footer__link">facebook</a></li>
+                <li><a href="" class="menu-footer__link">indtagram</a></li>
+                <li><a href="" class="menu-footer__link">twitter</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__subscribe subscribe-footer">
+            <div class="footer__title">Stay updated</div>
+            <form class="subscribe-footer__form">
+              <input placeholder="Enter your email" class="input">
+              <button class="subscribe-footer__button icon icon-send"></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Здесь пишем код-->
+    <script src="js/libs/accordion/vanilla-accordion.js"></script>
+    <script src="js/libs/isMobile/mobileDetect.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>

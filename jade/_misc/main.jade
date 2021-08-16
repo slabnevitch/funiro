@@ -1,0 +1,21 @@
+doctype html
+html(lang='ru')
+	head
+		meta(charset='utf-8')
+		title
+			block title
+		meta(name="description" content="")
+		link(rel="icon" href="img/favicon.png")
+		meta(name="viewport" content="width=device-width")
+		link(rel="stylesheet" href="css/main.css")
+	
+	body
+		include _mixins
+		include ../_sections/_header
+		block content
+		include ../_sections/_footer
+		// Здесь пишем код
+
+		script(src='js/libs/accordion/vanilla-accordion.js')
+		script(src='js/libs/isMobile/mobileDetect.js')
+		script(src='js/common.js')

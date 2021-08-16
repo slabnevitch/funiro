@@ -1,0 +1,33 @@
+$maxWidth: 1440;//ширина макета в граф. редакторе
+$maxWidthContainer: 1270;//ширина ограничивающего контейнера + 30px
+
+$fz: 16px;
+
+// colors
+$accent: #E89F72;
+$text: #3A3A3A;
+$gray: #F4F5F7;
+$dark-gray: #D8D8D8;
+
+// media
+$lg: $maxWidthContainer + 12 + 'px';
+$md: 991.98px;
+$sm: 767.98px;
+$xs: 575.98px;
+$xss: 479.98px;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1170px);
+
+$gutter: $grid-gutter-width;
+
+
+$g-b: 'Gilroy-Bold', sans-serif;
+$g-semi: 'Gilroy-SemiBold', sans-serif;
+$g-med: 'Gilroy-Medium', sans-serif;
+$g-reg: 'Gilroy-Regular', sans-serif;
+
+

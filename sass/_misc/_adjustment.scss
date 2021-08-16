@@ -1,0 +1,161 @@
+*{
+	box-sizing: border-box;
+}
+html, body{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: $g-reg;
+	font-weight: normal;
+	font-size: $fz;
+	min-width: 320px;
+	position: relative;
+	// line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+	color: $text;
+	background-color: #F9F1E7;
+}
+
+ul, li{
+	margin: 0;
+	padding: 0;
+}
+//input
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea{
+	appearance: none;
+}
+.input,
+input{
+	outline: none;
+	display: block;
+	width: 100%;
+}
+textarea.input{
+	resize: none;
+	padding: 0 0;
+}
+//END input
+.wrapper{
+	max-width: #{$maxWidthContainer + 'px'} ;
+	margin: 0 auto;
+	padding: 0 15px;
+	// @include row-flex();
+	// @include wrapper();
+}
+a{
+	text-decoration: none;
+}
+.toggle-mnu{
+	position: relative;
+	z-index: 5;
+	flex-shrink: 0;
+  display: none;
+  width: 28px;
+  height: 28px;
+  margin-top: 14px;
+  margin-left: 15px;
+
+  span:after, span:before{
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+  } 
+
+  span:after{
+
+    top: 18px;
+  }
+
+  span{
+
+    position: relative;
+    display: block;
+  } 
+
+  span, span:after, span:before{
+
+    width: 100%;
+    height: 2px;
+    background-color: $text;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+  }
+
+
+  &.on span{
+
+    background-color: transparent;
+  } 
+
+  &.on span:before{
+
+    transform: rotate(45deg) translate(-1px, 0px);
+  } 
+
+  &.on span:after{
+
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+
+  @include max-screen($sm){
+   	display: block;
+  }   
+} 
+.icon{
+	background-color: transparent;
+	border: none;
+}
+.justify{
+	content: '';
+	width: 100%;
+	height: 0;
+	display: inline-block;
+	overflow: hidden;
+	visibility: hidden;
+	line-height: 0;
+}
+.hidden{
+	display: none;
+}
+
+.ibg{
+background-position: center; 
+background-size: cover; 
+background-repeat: no-repeat; 
+position: relative;
+}
+
+.ibg img{
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	opacity: 0; 
+	// visibility: hidden;
+}
+._prod-img {
+	position: relative;
+	padding-bottom: 80%;
+	img{
+		@include absolute-center-old;
+	}
+}
+._fit img{//_fit - class for object-fit
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	object-fit: cover; 
+	object-position: center center;
+}
+

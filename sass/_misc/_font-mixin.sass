@@ -1,0 +1,6 @@
+@mixin font($fname, $filename)
+	@font-face
+		font-family: $fname
+		// font-style: $fstyle
+		// font-weight: $fweight
+		src: url("../fonts/#{$fname}.eot") format("eot"), url("../fonts/#{$fname}.ttf") format("ttf"), url("../fonts/#{$fname}.woff") format("woff")
