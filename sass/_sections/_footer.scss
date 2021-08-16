@@ -9,8 +9,20 @@
 	@include adaptive-value('padding-bottom', 60, 30, 1);
 
 	border-top: 1px solid $dark-gray;
+
+	@include max-screen($maxWidthContainer + 'px'){
+		grid-template-columns: 1fr 290px;
+	}
+	@include max-screen($md){
+		display: block;
+	}
 }
-.footer__main {}
+.footer__main {
+	@include max-screen($maxWidthContainer + 'px'){
+		grid-column: 1/3;
+		margin-bottom: 30px;
+	}
+}
 .footer__logo {
 	display: inline-block;
 	
@@ -22,8 +34,18 @@
 		margin-bottom: 1em;
 	}
 }
-.footer__contacts {}
-.contacts-footer {}
+.footer__contacts {
+
+}
+.contacts-footer {
+	@include max-screen($maxWidthContainer + 'px'){
+		display: flex;
+		align-items: center;
+	}
+	@include max-screen($sm){
+		display: block;
+	}
+}
 .contacts-footer__item {
 	display: inline-flex;
 	align-items: center;
@@ -35,6 +57,17 @@
 	}
 	&:not(:last-child){
 		margin-bottom: 1em;
+		@include max-screen($maxWidthContainer + 'px'){
+			margin-bottom: 0;
+			margin-right: 15px;
+		}
+		@include max-screen($sm){
+			margin-bottom: 10px;
+		}
+	}
+	@include max-screen($sm){
+		display: block;
+
 	}
 }
 .icon-location {}
@@ -43,9 +76,23 @@
 .menu-footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+
+	@include max-screen($md){
+		margin-bottom: 30px;
+	}
+	@include max-screen($xs){
+		display: block;
+	}
 	// grid-column-gap:5px;
 }
-.menu-footer__column {}
+.menu-footer__column {
+	&:not(:last-child){
+		@include max-screen($sm){
+			margin-bottom: 20px;
+		}
+		
+	}
+}
 .footer__title {
 	 margin: 0  0 16px / 24px * 1em 0;
 	@include adaptive-value('font-size', 24, 18, 1);

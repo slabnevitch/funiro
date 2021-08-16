@@ -72,6 +72,7 @@ window.addEventListener('load', function() {
 			if(targetEl.closest('.toggle-mnu')){
 				console.log('toggel!')
 				document.querySelector('.menu__body').classList.toggle('active');
+				document.querySelector('.toggle-mnu').classList.toggle('on');
 				
 			}
 		// КОНЕЫ раскрытие мобильного меню
