@@ -1,5 +1,5 @@
 .page__main-slider.main-slider
-	.main-slider__container
+	.main-slider__container.wrapper
 		.main-slider__body
 			.main-slider__content.content-main
 				h1.content-main__title High-Quality Furniture Just For You
@@ -14,11 +14,11 @@
 						button(type="button").slider-arrow.slider-arrow--next.icon-arrow-down
 				
 				.slider-main__body
-					- for (var i=0; i < 3; i++);
-						.slider-main__slide._fit
-							.slider-main__img._fit-img
-								img(src="img/main-slider/"+(i+1)+".jpg")
-						.slider-main__content
-							.slider-main__title Bohauss
-							.slider-main__text Luxury big sofa 2-seat
-							.slider-main__price.icon-arrow-link Rp 17.000.000
+					// - for (var i=0; i < 3; i++)
+					.slider-main__slide._fit
+						.slider-main__img._fit-img
+							//- img(src="img/main-slider/01.jpg")
+					.slider-main__content
+						.slider-main__title Bohauss
+						.slider-main__text Luxury big sofa 2-seat
+						.slider-main__price.icon-arrow-link Rp 17.000.000

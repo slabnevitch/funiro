@@ -1,13 +1,52 @@
 .page__main-slider {}
 .main-slider {}
-.main-slider__container {}
-.main-slider__body {}
-.main-slider__content {}
+.main-slider__container {
+	position: relative;
+
+	&:before{
+		@include min-screen($md){
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			right: 376px;
+			background-color: #f9f1e7;
+		}  
+	}
+	&:after{
+		content: '';
+	}
+}
+.main-slider__body {
+	padding-top: 140px;
+	position: relative;
+	z-index: 3;
+
+	@include max-screen($md){
+		padding-top: 80px;
+		
+	} 
+	@include max-screen($sm){
+		padding-top: 50px;
+		
+	}
+	@include min-screen($sm){
+		display: flex;
+		
+	}  
+}
+.main-slider__content {
+	flex: 0 1 494/1240 * 100%;
+}
 .content-main {}
 .content-main__title {}
 .content-main__text {}
 .content-main__button {}
-.main-slider__slider {}
+.main-slider__slider {
+	flex: 1 1 auto;
+	min-width: 0; //для слайдера, находящегося внутри флекс-элемента
+}
 .slider-main {}
 .slider-main__controls {}
 .controls-slider-main {}
