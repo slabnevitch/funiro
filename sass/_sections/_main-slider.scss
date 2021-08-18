@@ -39,7 +39,13 @@
 .main-slider__content {
 	flex: 0 1 494/1240 * 100%;
 }
-.content-main {}
+.content-main {
+	background-color: rgba(255, 255, 255, .72);
+	@supports((-webkit-backdrop-filter: blur(31px)) or backdrop-filter: blur(31px))){// определение поддержки блюра без джаваскрипт
+		background-color: rgba(255, 255, 255, .72);
+		backdrop-filter: blur(31px);
+	}
+}
 .content-main__title {}
 .content-main__text {}
 .content-main__button {}
