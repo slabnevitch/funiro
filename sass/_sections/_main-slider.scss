@@ -40,29 +40,116 @@
 	flex: 0 1 494/1240 * 100%;
 }
 .content-main {
+	position: relative;
+	z-index: 5;
+	padding-left: 15px;
+	padding-right: 15px;
+	@include adaptive-value("padding-top", 60, 15, 1);
+	@include adaptive-value("padding-bottom", 60, 15, 1);
 	background-color: rgba(255, 255, 255, .72);
-	@supports((-webkit-backdrop-filter: blur(31px)) or backdrop-filter: blur(31px))){// определение поддержки блюра без джаваскрипт
-		background-color: rgba(255, 255, 255, .72);
-		backdrop-filter: blur(31px);
+
+	@include min-screen($md){
+		background-color: rgba(255, 255, 255, .9);
+		@include adaptive-value("padding", 60, 1, 1);
+		
+		 @supports (backdrop-filter: blur(10px)) or (--webkit-backdrop-filter: blur(10px)){// определение поддержки блюра без джаваскрипт
+			background-color: rgba(255, 255, 255, .72);
+			backdrop-filter: blur(31px);
+		}
 	}
 }
-.content-main__title {}
-.content-main__text {}
-.content-main__button {}
+.content-main__title {
+	@include adaptive-value("font-size", 56, 24, 1);
+	font-family: $g-med;
+	line-height: 120%;
+
+	&:not(:last-child){
+	     //font-size of body/font-size данного блока
+		margin-bottom: 16px/56px * 1em; //адаптивны	 маргин в зависимости от фонт-сайз
+	}
+}
+.content-main__text {
+	@include adaptive-value("font-size", 20, 16, 1);
+	font-family: $g-med;
+	line-height: 150%;
+	&:not(:last-child){
+		margin-bottom: 48px/20px * 1em; //адаптивны	 маргин в зависимости от фонт-сайз
+	}
+}
+.content-main__button {
+	@include adaptive-value("min-height", 78, 45, 1);
+	@include adaptive-value("font-size", 20, 16, 1);
+	font-family: $g-semi;
+	line-height: 150%;
+	background-color: $accent;
+	color: 	#fff;
+	width: 100%;
+
+	@media (any-hover: hover) {
+			&:hover{
+				 background-color: darken($accent, 5%);
+			}
+			
+		}	
+}
 .main-slider__slider {
 	flex: 1 1 auto;
 	min-width: 0; //для слайдера, находящегося внутри флекс-элемента
 }
 .slider-main {}
-.slider-main__controls {}
+.slider-main__controls {
+	display: flex;
+	justify-content: space-between;
+}
 .controls-slider-main {}
 .controls-slider-main__dots {}
-.controls-slider-main__arrows {}
+.controls-slider-main__arrows {
+	display: grid;
+	grid-template-columns: repeat(2, 48px);
+	grid-column-gap: 8px;
+}
 .slider-arrows {}
-.slider-arrow {}
-.slider-arrow--prev {}
-.icon-arrow-down {}
-.slider-arrow--next {}
+.slider-arrow {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: rgba($accent, .5);
+	color: #fff;
+
+	@media (any-hover: hover) {
+		&:hover{
+			 background-color:$accent;
+		}
+		
+	}
+
+	&--white{
+		color: $accent;
+		background-color: #fff;
+		box-shadow: 0 4px 14px 1px rgba(#000, .16);
+
+		@media (any-hover: hover) {
+			&:hover{
+				 background-color:$accent;
+				 color: #fff;
+			}
+		
+		}
+	}	
+}
+.slider-arrow--prev {
+	&:before{
+		display: inline-block;
+		transform: rotate(90deg);
+	}
+}
+
+.slider-arrow--next {
+	&:before{
+		display: inline-block;
+		transform: rotate(-90deg);
+	}
+}
 .slider-main__body {}
 .slider-main__slide {}
 ._fit {}

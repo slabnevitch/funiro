@@ -50,6 +50,35 @@ textarea.input{
 a{
 	text-decoration: none;
 }
+button{
+	background-color: transparent;
+	 border: none;
+ outline: none;
+}
+.button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 15px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  transition: background-color .1s ease;
+	
+  &:hover{
+     // background-color: lighten(orange, 5%);
+  }
+   
+		
+  &:active{
+   // background-color: darken(orange, 5%);
+  }
+   
+}
 .toggle-mnu{
 	position: relative;
 	z-index: 5;
