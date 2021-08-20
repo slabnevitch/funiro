@@ -70,24 +70,32 @@
               <div class="content-main__text">Our furniture is made from selected and best quality materials that are suitable for your dream home</div>
               <div class="content-main__button button">Shop Now</div>
             </div>
-            <div class="main-slider__slider slider-main">
+            <div class="main-slider__slider slider-main swiper-container">
               <div class="slider-main__controls controls-slider-main">
-                <div class="controls-slider-main__dots"></div>
+                <div class="controls-slider-main__dots swiper-pagination"></div>
                 <div class="controls-slider-main__arrows slider-arrows">
                   <button type="button" class="slider-arrow slider-arrow--prev icon-arrow-down"></button>
                   <button type="button" class="slider-arrow slider-arrow--next icon-arrow-down"></button>
                 </div>
               </div>
-              <div class="slider-main__body">
-                <!-- - for (var i=0; i < 3; i++)-->
-                <div class="slider-main__slide _fit">
-                  <div class="slider-main__img _fit-img">
-                  </div>
+              <div class="slider-main__body swiper-wrapper">
+                <div class="slider-main__slide _fit swiper-slide">
+                  <div class="slider-main__img _fit"><img src="img/main-slider/01.jpg" class="_fit-img"></div><a href="" class="slider-main__content">
+                    <div class="slider-main__title">Bohauss</div>
+                    <div class="slider-main__text">Luxury big sofa 2-seat</div>
+                    <div class="slider-main__price icon-arrow-link">Rp 17.000.000</div></a>
                 </div>
-                <div class="slider-main__content">
-                  <div class="slider-main__title">Bohauss</div>
-                  <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                  <div class="slider-main__price icon-arrow-link">Rp 17.000.000</div>
+                <div class="slider-main__slide _fit swiper-slide">
+                  <div class="slider-main__img _fit"><img src="img/main-slider/01.jpg" class="_fit-img"></div><a href="" class="slider-main__content">
+                    <div class="slider-main__title">Bohauss</div>
+                    <div class="slider-main__text">Luxury big sofa 2-seat</div>
+                    <div class="slider-main__price icon-arrow-link">Rp 17.000.000</div></a>
+                </div>
+                <div class="slider-main__slide _fit swiper-slide">
+                  <div class="slider-main__img _fit"><img src="img/main-slider/01.jpg" class="_fit-img"></div><a href="" class="slider-main__content">
+                    <div class="slider-main__title">Bohauss</div>
+                    <div class="slider-main__text">Luxury big sofa 2-seat</div>
+                    <div class="slider-main__price icon-arrow-link">Rp 17.000.000</div></a>
                 </div>
               </div>
             </div>
@@ -148,7 +156,7 @@
     <!-- Здесь пишем код-->
     <script src="js/libs/accordion/vanilla-accordion.js"></script>
     <script src="js/libs/isMobile/mobileDetect.js"></script>
-    <script src="js/libs/tiny-slider-master/dist/min/tiny-slider.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>

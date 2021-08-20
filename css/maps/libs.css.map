@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"../libs.css","sourcesContent":[]}
+{"version":3,"sources":["libs.scss"],"names":[],"mappings":"AAIA,yDAAO","file":"../libs.css","sourcesContent":["// @import \"../libs/bootstrap/css/bootstrap-grid.min\";\r\n// @import \"../libs/bootstrap/scss/bootstrap-reboot.scss\";\r\n// @import \"../libs/bootstrap/scss/bootstrap-grid.scss\";\r\n// @import \"../js/libs/tiny-slider-master/dist/tiny-slider\";\r\n@import \"https://unpkg.com/swiper/swiper-bundle.min.css\";\r\n"]}

@@ -42,7 +42,7 @@ window.addEventListener('load', function() {
 	document.addEventListener('click', docClick);
 	
 	function docClick(e){//Обработчик клика на веь документ
-		console.log('docClick');
+		// console.log('docClick');
 		
 		var targetEl = e.target;
 
@@ -67,7 +67,7 @@ window.addEventListener('load', function() {
 			}
 		// КОНЕЦ Открытие и закрытие Формы поиска
 
-				console.log(targetEl)
+				// console.log(targetEl)
 		// Раскрытие мобильного меню
 			if(targetEl.closest('.toggle-mnu')){
 				console.log('toggel!')
@@ -92,4 +92,23 @@ window.addEventListener('load', function() {
 			elems[i].classList.remove(classToRemove);
 		}
 	}
+
+	var swiper = new Swiper('.swiper-container', {
+	  // Optional parameters
+	  loop: true,
+
+	  // If we need pagination
+	  pagination: {
+	    el: '.controls-slider-main__dots',
+	    clickable: true
+	  },
+
+	  // Navigation arrows
+	  navigation: {
+	    nextEl: '.slider-main__controls .slider-arrow--next',
+	    prevEl: '.slider-main__controls .slider-arrow--prev',
+	  }
+	});
+
+
 });
