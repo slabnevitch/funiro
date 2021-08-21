@@ -4,7 +4,7 @@
 			.main-slider__content.content-main
 				h1.content-main__title High-Quality Furniture Just For You
 				.content-main__text Our furniture is made from selected and best quality materials that are suitable for your dream home
-				.content-main__button.button Shop Now
+				.content-main__button.button(data-da="main-slider__body, 991.98") Shop Now
 
 			.main-slider__slider.slider-main.swiper-container
 				.slider-main__controls.controls-slider-main
@@ -17,8 +17,8 @@
 					- for (var i=0; i < 3; i++)
 						.slider-main__slide._fit.swiper-slide
 							.slider-main__img._fit
-								img._fit-img(src="img/main-slider/01.jpg")
-							a(href="").slider-main__content
+								img._fit-img(src="img/main-slider/0"+(i+1)+".jpg")
+							a(href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%").slider-main__content
 								.slider-main__title Bohauss
 								.slider-main__text Luxury big sofa 2-seat
 								.slider-main__price.icon-arrow-link Rp 17.000.000

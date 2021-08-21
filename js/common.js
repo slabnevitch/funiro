@@ -96,7 +96,8 @@ window.addEventListener('load', function() {
 	var swiper = new Swiper('.swiper-container', {
 	  // Optional parameters
 	  loop: true,
-
+	  spaceBetween: 30,
+	  parallax: true,
 	  // If we need pagination
 	  pagination: {
 	    el: '.controls-slider-main__dots',
