@@ -1,0 +1,9 @@
+section.advantages
+	.advantages__container.wrapper
+		- var items = [{title: 'hight quality', text: 'crafted from top material'}, {title: 'warranty protection', text: 'Over 2 years'}, {title: 'free shipping', text: 'Order over 150$'}, {title: '24 / 7 support', text: 'Dedicated support'}];
+		each item, i in items
+			.advantages__item
+				.advantages__icon
+					img(src="img/advantages/0"+(i+1)+".svg")
+				.advantages__title= item.title
+				.advantages__text= item.text

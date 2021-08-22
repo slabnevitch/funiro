@@ -1,4 +1,6 @@
-.page__main-slider {}
+.page__main-slider {
+	background-color: #FCF9F4;
+}
 .main-slider {}
 .main-slider__container {
 	position: relative;
@@ -100,8 +102,8 @@
 	// padding-bottom: 70px;
 	min-width: 0; //для слайдера, находящегося внутри флекс-элемента
 
-	overflow: visible;
 	@include min-screen($md){
+		overflow: visible;
 		@include adaptive-value("width", 934, 290, 1);
 	}
 
@@ -126,13 +128,15 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 70px;
+	// height: 70px;
 	// flex: 1 0 auto;
 	// width: 100%;
 	align-self: stretch;
+		margin-bottom: 20px;
 	@include max-screen($md){
 		justify-content: center;
-	}  
+	} 
+
 }
 .swiper-pagination-bullets{
 	position: static;
@@ -238,7 +242,7 @@
 }
 ._fit {}
 .slider-main__img {
-	padding-bottom: 69.1%;
+	padding-bottom: 79.1%;
 	._fit-img {
 
 	}

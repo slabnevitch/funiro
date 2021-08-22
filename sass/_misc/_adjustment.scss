@@ -40,6 +40,9 @@ textarea.input{
 	padding: 0 0;
 }
 //END input
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+}
 .wrapper{
 	max-width: #{$maxWidthContainer + 'px'} ;
 	margin: 0 auto;

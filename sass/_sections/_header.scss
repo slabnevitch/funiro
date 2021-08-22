@@ -3,6 +3,22 @@
 	width: 100%;
 	top: 0;
 	left: 0;
+	min-height: 40px;//нужно для добавления класса _scroll при прокрутке
+	@include max-screen($sm){
+		min-height: 5px;
+	}  
+	&._scroll{
+		.header__wrapper {
+			background-color: rgba(#fff, 0.8);
+		}
+		.header__body {
+			min-height: 50px;
+			@include min-screen($md){
+				
+				min-height: 70px;
+			}  
+		}
+	}
 }
 .header__wrapper {
 	
@@ -11,7 +27,8 @@
 	top: 0;
 	left: 0;
 	z-index: 50;
-	background-color: #F9F1E7;
+	// background-color: #F9F1E7;
+
 }
 .header__container {}
 .wrapper {}
@@ -21,6 +38,7 @@
 	padding: 5px 0;
 	min-height: 125px;
 	position: relative;
+	transition: min-height .3s;
 
 	@include max-screen($md){
 		min-height: 80px;

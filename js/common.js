@@ -93,6 +93,21 @@ window.addEventListener('load', function() {
 		}
 	}
 
+	var headerElem = document.querySelector('.header'),
+			observerCallback = function(entries, observer) {
+				console.log(entries);
+				if(entries[0].isIntersecting){
+					headerElem.classList.remove('_scroll');
+				}else{
+
+					headerElem.classList.add('_scroll');
+				}
+			};
+
+	var headerObserver = new IntersectionObserver(observerCallback);
+	headerObserver.observe(headerElem);
+
+
 	var swiper = new Swiper('.swiper-container', {
 	  // Optional parameters
 	  loop: true,
