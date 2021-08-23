@@ -1691,8 +1691,35 @@ button {
 }
 
 .products__more {
+  position: relative;
   min-width: 245px;
   border: 1px solid #E89F72;
+}
+
+.products__more:after {
+  content: '';
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/preloader.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.products__more.hold {
+  pointer-events: none;
+  color: rgba(232, 159, 114, 0.5);
+  border-color: rgba(232, 159, 114, 0.5);
+}
+
+.products__more.hold:after {
+  display: block;
 }
 
 .footer__body {

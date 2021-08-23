@@ -76,6 +76,12 @@ window.addEventListener('load', function() {
 			}
 		// КОНЕЫ раскрытие мобильного меню
 
+		// подгрузка новых товаров
+			if(targetEl.classList.contains('products__more')){
+				fetchProducts(targetEl);
+			}
+		// КОНЕЫ подгрузка новых товаров
+
 	}
 	function siblings(elSelector, el, classToRemove) {
 		var elSiblings = document.querySelectorAll(elSelector);
@@ -90,6 +96,64 @@ window.addEventListener('load', function() {
 		for (var i = 0; i < elems.length; i++) {
 			elems[i].classList.remove(classToRemove);
 		}
+	}
+
+	function fetchProducts(button) {
+		if(!button.classList.contains('hold')){
+			button.classList.add('hold');
+			fetch('json/products.json')
+				.then(function(response){
+					return response.json();
+				})
+				.then(function(data) {
+					console.log(data.products);
+					setTimeout(function() {
+						button.classList.remove('hold');
+						button.remove();
+						createFetchedProducts(data.products);
+
+
+					}, 1000);
+				})
+				.catch(function(error) {
+					alert('loading error ' + error);
+				});
+		}
+	}
+
+	function createFetchedProducts(data) {
+		var container = document.querySelector('.products__items');
+		data.forEach(function(elem) {
+			var labels = '';
+			
+			var product = `<article data-pid="${elem.id}" class="products__item item-product">
+	              <div class="item-product__labels">
+	                <div class="item-product__label item-product__label--sale">${elem.labels.length > 0 ? elem.labels.reduce(function(sum, current){return current.value}, 0) : ''}</div>
+	              </div>
+	              <div class="item-product__image _fit"><img src="img/products/${elem.image}" class="_fit-img"></div>
+	              <div class="item-product__body">
+	                <div class="item-product__content">
+	                  <div class="item-product__title">${elem.title}</div>
+	                  <div class="item-product__text">${elem.text}</div>
+	                </div>
+	                <div class="item-product__prices">
+	                  <div class="item-product__price">${elem.price}</div>
+	                  <div class="item-product__price item-product__price--old">${elem.priceOld}</div>
+	                </div>
+	                <div class="item-product__actions actions-product">
+	                  <div class="actions-product__body"><span class="actions-product__button button button-wht">Add to cart</span><span class="actions-product__link icon-share">share</span><span class="actions-product__link icon-favorite">like</span></div>
+	                </div>
+	              </div>
+	            </article>`;
+
+            if(elem.labels.length > 0){
+            	// elem.labels.filter(function(label){console.log(label)});
+				console.log(elem.labels.map(function(el){return el.value}));
+            }
+             container.insertAdjacentHTML('beforeend', product);
+
+		});
+		// var labels = 
 	}
 
 	var headerElem = document.querySelector('.header'),

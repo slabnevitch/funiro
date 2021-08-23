@@ -159,6 +159,29 @@
 	text-align: center;
 }
 .products__more{
+	position: relative;
 	min-width: 245px;
 	border: 1px solid $accent;
+
+	&:after{
+		content: '';
+		display: none;
+		@include absolute-center-old;
+		width: 30px;
+		height: 30px;
+		background-image: url(../img/preloader.gif);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	&.hold{
+		// opacity: 0.5;
+		pointer-events: none;
+		color: rgba($accent, .5);
+		border-color:rgba($accent, .5);
+
+		&:after{
+			display: block;
+		}
+	}
 }
