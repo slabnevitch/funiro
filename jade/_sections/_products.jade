@@ -1,0 +1,27 @@
+section.products
+	.products__container.wrapper
+		.products__title.title Our Products
+		.products__items
+			- var items = [{title: 'Syltherine', text: 'Stylish cafe chair', price: 'Rp 2.500.000', lastPrice: 'Rp 3.500.000', labelText: '30%', labelClass: 'sale'}, {title: 'Leviosa', text: 'Stylish cafe chair', price: 'Rp 2.500.000', lastPrice: '', labelText: '30%', labelClass: 'sale'}, {title: 'Lolito', text: 'Luxury big sofa', price: 'Rp 7.000.000', lastPrice: 'Rp 14.000.000', labelText: '50%', labelClass: 'sale'}, {title: 'Respira', text: 'Minimalist fan', price: 'Rp 500.000', lastPrice: '', labelText: 'New', labelClass: 'new'}];
+
+			each item, i in items
+				article.products__item.item-product(data-pid="1")
+					.item-product__labels
+						.item-product__label.item-product__label--sale= item.labelText
+					.item-product__image._fit
+						img._fit-img(src="img/products/0"+(i+1)+".jpg")
+					
+					.item-product__body
+						.item-product__content
+							.item-product__title=item.title
+							.item-product__text= item.text
+						
+						.item-product__prices
+							.item-product__price= item.price
+							.item-product__price.item-product__price--old= item.lastPrice
+						
+						.item-product__actions.actions-product
+							.actions-product__body
+								span.actions-product__button.button.button-wht Add to cart
+								span.actions-product__link.icon-share share
+								span.actions-product__link.icon-favorite like

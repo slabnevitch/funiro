@@ -43,7 +43,6 @@ window.addEventListener('load', function() {
 	
 	function docClick(e){//Обработчик клика на веь документ
 		// console.log('docClick');
-		
 		var targetEl = e.target;
 
 		// Открытие и закрытие выпадающих меню на тач-устройствах

@@ -53,6 +53,12 @@ h1, h2, h3, h4, h5, h6{
 a{
 	text-decoration: none;
 }
+.title {
+	@include adaptive-value("font-size", 40, 24, 1);
+	font-family: $g-b;
+	line-height: 120%;
+	text-align: center;
+}
 button{
 	background-color: transparent;
 	 border: none;
@@ -79,6 +85,18 @@ button{
 		
   &:active{
    // background-color: darken(orange, 5%);
+  }
+
+  &-wht{
+  	background-color: #fff;
+  	color: $accent;
+
+  	@media (any-hover: hover) {
+  		&:hover{
+  			background-color: $accent;
+  			color: #fff;
+  		}
+  	}
   }
    
 }
