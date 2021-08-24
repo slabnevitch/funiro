@@ -169,13 +169,15 @@ window.addEventListener('load', function() {
 	}
 
 	function sendToCard(btn) {
-		var img = btn.closest('.products__item').querySelector('.item-product__image'),
+		var product = btn.closest('.products__item'),
+				img = product.querySelector('.item-product__image'),
 				cart = document.querySelector('.cart-header__icon'),
 				imgClone = img.cloneNode(true);
 
 		if(!btn.classList.contains('hold')){
 			btn.classList.add('hold');
 			btn.innerText = 'allready in cart';
+					console.log('transitionend!!');
 		}
 
 		imgClone.setAttribute('style', `width: ${img.offsetWidth}px; 
@@ -200,13 +202,52 @@ window.addEventListener('load', function() {
 			left: ${cart.getBoundingClientRect().left}px;
 			top: ${cart.getBoundingClientRect().top}px;`);
 
-
 		imgClone.addEventListener('transitionend', function(e) {
-			if(btn.classList.contains('hold')){
-				imgClone.remove();
-			}
+			// if(btn.classList.contains('hold')){
+			// }
+				if (e.propertyName == 'top') {
+        	imgClone.remove();
+					updateCart(btn, product.dataset.pid, false);
+    		}
 		});
 	}
+
+	function updateCart(btn, prodId, action) {
+
+		var cartQuantity = document.querySelector('.cart-header__icon span'),
+				cartIcon = document.querySelector('.cart-header__icon'),
+				cartList = document.querySelector('.cart-header__list'),
+				prodTitle = document.querySelector('.products__item[data-pid="'+prodId+'"]')
+					.querySelector('.item-product__title').innerText,
+				prodImg = document.querySelector('.products__item[data-pid="'+prodId+'"]')
+					.querySelector('.item-product__image').innerHTML;
+
+		console.log(prodTitle);
+
+		if(!action){
+			// var cartItem
+			var listItem = `<li class="cart-list__item">
+				<div class="cart-list__img">${prodImg}</div>	
+				<div class="cart-list__title">${prodTitle}</div>	
+				<div class="cart-list__remove">delete</div>	
+			</li>`
+
+			if(!cartQuantity){
+				cartIcon.insertAdjacentHTML('beforeend', '<span>1</span>');
+			}else{
+				cartQuantity.innerHTML = +cartQuantity.innerHTML + 1;
+			}
+
+			cartList.insertAdjacentHTML('beforeend', listItem);
+		}
+	}
+
+	/*
+		Список:
+			- фото
+			- нызвание
+			- удаление
+	*/
 
 	var headerElem = document.querySelector('.header'),
 			observerCallback = function(entries, observer) {
