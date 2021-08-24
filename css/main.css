@@ -1521,6 +1521,8 @@ button {
 
 .item-product__image {
   padding-bottom: 105.61404%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .item-product__body {
@@ -1666,6 +1668,11 @@ button {
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   margin-bottom: 20px;
+}
+
+.actions-product__button.hold {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .actions-product__link {

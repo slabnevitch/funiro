@@ -82,6 +82,12 @@ window.addEventListener('load', function() {
 			}
 		// КОНЕЫ подгрузка новых товаров
 
+		// отправка картинки в корзину
+			if(targetEl.classList.contains('actions-product__button')){
+				sendToCard(targetEl);
+			}
+		// КОНЕЫ отправка картинки в корзину
+
 	}
 	function siblings(elSelector, el, classToRemove) {
 		var elSiblings = document.querySelectorAll(elSelector);
@@ -101,18 +107,17 @@ window.addEventListener('load', function() {
 	function fetchProducts(button) {
 		if(!button.classList.contains('hold')){
 			button.classList.add('hold');
+			
 			fetch('json/products.json')
 				.then(function(response){
 					return response.json();
 				})
 				.then(function(data) {
-					console.log(data.products);
+					// console.log(data.products);
 					setTimeout(function() {
+						createFetchedProducts(data.products);
 						button.classList.remove('hold');
 						button.remove();
-						createFetchedProducts(data.products);
-
-
 					}, 1000);
 				})
 				.catch(function(error) {
@@ -124,13 +129,24 @@ window.addEventListener('load', function() {
 	function createFetchedProducts(data) {
 		var container = document.querySelector('.products__items');
 		data.forEach(function(elem) {
+			var product = '';
 			var labels = '';
+			var labelsStart = `<div class="item-product__labels">`;
+			var labelsBody = '';
+			var labelsEnd = `</div>`;
+
+			if(elem.labels.length > 0){
+				elem.labels.forEach(function(label) {
+					labelsBody+= `<div class="item-product__label item-product__label--${label.type}">${label.value}</div>`
+				});
+
+				labels += labelsStart + labelsBody + labelsEnd;
+        // console.log(labelsBody);
+        console.log(labels);
+			}
 			
-			var product = `<article data-pid="${elem.id}" class="products__item item-product">
-	              <div class="item-product__labels">
-	                <div class="item-product__label item-product__label--sale">${elem.labels.length > 0 ? elem.labels.reduce(function(sum, current){return current.value}, 0) : ''}</div>
-	              </div>
-	              <div class="item-product__image _fit"><img src="img/products/${elem.image}" class="_fit-img"></div>
+			var productStart = `<article data-pid="${elem.id}" class="products__item item-product">`;
+	    var productEnd = `<div class="item-product__image _fit"><img src="img/products/${elem.image}" class="_fit-img"></div>
 	              <div class="item-product__body">
 	                <div class="item-product__content">
 	                  <div class="item-product__title">${elem.title}</div>
@@ -145,15 +161,51 @@ window.addEventListener('load', function() {
 	                </div>
 	              </div>
 	            </article>`;
+      var product = productStart + labels + productEnd
 
-            if(elem.labels.length > 0){
-            	// elem.labels.filter(function(label){console.log(label)});
-				console.log(elem.labels.map(function(el){return el.value}));
-            }
-             container.insertAdjacentHTML('beforeend', product);
+     	container.insertAdjacentHTML('beforeend', product);
 
 		});
-		// var labels = 
+	}
+
+	function sendToCard(btn) {
+		var img = btn.closest('.products__item').querySelector('.item-product__image'),
+				cart = document.querySelector('.cart-header__icon'),
+				imgClone = img.cloneNode(true);
+
+		if(!btn.classList.contains('hold')){
+			btn.classList.add('hold');
+			btn.innerText = 'allready in cart';
+		}
+
+		imgClone.setAttribute('style', `width: ${img.offsetWidth}px; 
+			height: ${img.offsetHeight}px;
+			padding-bottom: 0;
+			position: fixed;
+			border: 2px solid #E89F72;
+			left: ${img.getBoundingClientRect().left}px;
+			top: ${img.getBoundingClientRect().top}px;`);
+
+		document.body.append(imgClone);
+
+		imgClone.setAttribute('style', `width: ${img.offsetWidth}px; 
+			height: ${img.offsetHeight}px;
+			padding-bottom: 0;
+			position: fixed;
+			border: 2px solid #E89F72;
+			opacity: 0;
+			width: 0;
+			height: 0;
+			z-index: 100;
+			left: ${cart.getBoundingClientRect().left}px;
+			top: ${cart.getBoundingClientRect().top}px;`);
+
+
+		imgClone.addEventListener('transitionend', function(e) {
+			if(btn.classList.contains('hold')){
+				imgClone.remove();
+			}
+		});
 	}
 
 	var headerElem = document.querySelector('.header'),

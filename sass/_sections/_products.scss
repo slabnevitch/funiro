@@ -65,6 +65,7 @@
 }
 .item-product__image {
 	padding-bottom: 301/285 * 100%; // делим высоту картинк на мин. ширину карточки
+	transition: all 1s ease;
 }
 ._fit {}
 ._fit-img {}
@@ -136,6 +137,11 @@
 .actions-product__button {
 	flex: 1 1 100%;
 	margin-bottom: 20px;
+
+	&.hold{
+		pointer-events: none;
+		opacity: 0.5;
+	}
 }
 .button {}
 .button-wht {}
