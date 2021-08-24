@@ -825,6 +825,74 @@ button {
   font-family: "Gilroy-Regular", sans-serif;
 }
 
+.cart-header__body {
+  width: 300px;
+  max-height: 200px;
+  padding: 15px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 5;
+  background-color: #fff;
+  border: 1px solid #D8D8D8;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+}
+
+.cart-header__body.active {
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media only screen and (max-width: 991.98px) {
+  .cart-header__body {
+    top: 50px;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .cart-header__body {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+.cart-list__item {
+  margin-bottom: 15px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  -ms-grid-columns: 50px 1fr;
+  grid-template-columns: 50px 1fr;
+}
+
+.cart-list__img {
+  height: 50px;
+  -ms-grid-row: span 2;
+  grid-row: span 2;
+}
+
+.cart-list__title {
+  margin-bottom: 5px;
+  font-family: "Gilroy-SemiBold", sans-serif;
+  font-size: 20px;
+}
+
+.cart-list__remove {
+  color: red;
+}
+
 .actions-header__item--user {
   position: relative;
   width: 40px;
