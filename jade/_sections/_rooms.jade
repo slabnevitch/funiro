@@ -6,18 +6,19 @@ section.rooms
 			.rooms__button.button Explore More
 
 		.rooms__slider.slider-rooms
-			.slider-rooms__body.swiper
-				.slider-rooms__slide
-				.slider-rooms__image._fit
-					img._fit-img(src="img/rooms/01.jpg")
-				
-				.slider-rooms__content.icon-arrow-link
-					.slider-rooms__label.label-slider
-						.label-slider__number 1
-						.label-slider__line
-						.label-slider__text Bed Room
+			.slider-rooms__body.swiper-wrapper
+				- for (var i=0; i < 3; i++)
+					.slider-rooms__slide.swiper-slide
+						.slider-rooms__image._fit
+							img._fit-img(src="img/rooms/0"+(i+1)+".jpg")
+					
+						.slider-rooms__content.icon-arrow-link(data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" data-swiper-parallax-y="-50%")
+							.slider-rooms__label.label-slider
+								.label-slider__number 01
+								.label-slider__line
+								.label-slider__text Bed Room
 
-					.slider-rooms__title Inner Peace
+							.slider-rooms__title Inner Peace
 
 			.slider-rooms__arrows.slider-arrows
 				button(type="button").slider-arrow.slider-arrow--prev.icon-arrow-down

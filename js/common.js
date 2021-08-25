@@ -308,6 +308,28 @@ window.addEventListener('load', function() {
 	    prevEl: '.slider-main__controls .slider-arrow--prev',
 	  }
 	});
+	var rooms = new Swiper('.slider-rooms', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 'auto',
+		watchOverflow: true,
+		loopAdditionalSlides: 5,
+	  // Optional parameters
+	  loop: true,
+	  spaceBetween: 24,
+	  parallax: true,
+	  // If we need pagination
+	  pagination: {
+	    el: '.slider-rooms__dots',
+	    clickable: true
+	  },
+
+	  // Navigation arrows
+	  navigation: {
+	    nextEl: '.slider-rooms__arrows .slider-arrow--next',
+	    prevEl: '.slider-rooms__arrows .slider-arrow--prev'
+	  }
+	});
 
 
 });

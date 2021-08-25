@@ -1,0 +1,177 @@
+.rooms {
+	@include adaptive-value("padding-top", 44, 30, 1);
+	@include adaptive-value("padding-bottom", 44, 30, 1);
+	background-color: #FCF8F3;
+}
+.rooms__container {
+	@include min-screen($md){
+		display: flex;
+	}
+}
+.wrapper {}
+.rooms__body {
+	flex: 0 0 465/1240 * 100%;
+	position: relative;
+	align-self: center;
+	z-index: 4;
+
+	@include min-screen($md){
+		@include adaptive-value("padding-right", 80, 30, 1);
+	}
+	@include max-screen($md){
+		padding-bottom: 30px;
+	}
+}
+.rooms__title {
+	margin-bottom: 20px;
+	text-align: left;
+}
+.title {}
+.rooms__text {
+	line-height: 150%;
+	margin-bottom: 24/16 * 1em;
+}
+.rooms__button {
+	min-width: 176px;
+	background-color: $accent;
+}
+.rooms__slider {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+.slider-rooms {
+
+	position: relative;
+
+	&:before{
+		content: '';
+		position: absolute;
+		width: 100vw;
+		height: 100%;
+		top: 0;
+		right: 100%;
+		z-index: 3;
+		background-color: #FCF8F3;
+
+		@include max-screen($md){
+			display: none;
+		}
+	}
+}
+.slider-rooms__body {
+	position: relative;
+}
+.swiper {}
+.slider-rooms__slide {
+	width: 372px;
+	height: 486px;
+	position: relative;
+	@include adaptive-value("min-height", 585, 400, 1);
+
+	&.swiper-slide-active{
+		.slider-rooms__image {
+			height: 100%;
+		}
+	}
+
+	@include max-screen($xss){
+		width: 100%;
+	}
+
+}
+.slider-rooms__image {
+	transition: height .4s ease-out;
+	height: 100%;
+	@include min-screen($sm){
+		height: 83%;
+	}
+}
+._fit {}
+._fit-img {}
+.slider-rooms__content {
+	position: absolute;
+	@include adaptive-value("left", 24, 10, 1);
+	@include adaptive-value("bottom", 24, 10, 1);
+	@include adaptive-value("padding", 32, 15, 1);
+
+	@supports (backdrop-filter: blur(10px)) or (--webkit-backdrop-filter: blur(10px)){// определение поддержки блюра без джаваскрипт
+		background-color: rgba(255, 255, 255, .72);
+		backdrop-filter: blur(31px);
+	}
+
+	&:before{
+		width: 48px;
+		height: 48px;
+		position: absolute;
+		bottom: 0;
+		left: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $accent;
+		color: #fff;
+	}
+
+
+}
+.icon-arrow-link {}
+.slider-rooms__label {
+	display: grid;
+	grid-template-columns: auto 27px auto;
+	align-items: center;
+	justify-content: start;
+	grid-gap: 8px;
+	margin-bottom: 8px;
+	color: $dark-gray;
+	font-family: $g-reg;
+	color:  #616161;
+}
+.label-slider {}
+.label-slider__number {}
+.label-slider__line {
+	height: 1px;
+	background-color:#616161;
+}
+.label-slider__text {}
+.slider-rooms__title {
+	font-family: $g-semi;
+	font-size: 28px;
+	line-height: 120%;
+}
+.slider-rooms__arrows {
+	display: flex;
+	position: absolute;
+	width: calc(100% + 48px);
+	top: 50%;
+	left: -24px;
+	transform: translateY(-50%);
+	justify-content: space-between;
+	z-index: 5;
+	pointer-events: none;
+
+	@include max-screen($lg){
+		width: calc(100% - 48px);
+		left: 24px;
+	}
+}
+.slider-arrows {}
+.slider-arrow {
+	pointer-events: auto;
+}
+.slider-arrow--prev {}
+.icon-arrow-down {}
+.slider-arrow--next {}
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal.slider-rooms__dots {
+
+	@include min-screen($sm){
+		position: absolute;
+		bottom: 30px;
+		left: 396px;
+		
+	}
+	@include max-screen($sm){
+		padding-top: 15px;
+		justify-content: center;
+	}
+}
+.swiper-pagination {}
