@@ -332,4 +332,39 @@ window.addEventListener('load', function() {
 	});
 
 
+	var tricks = new Swiper('.tricks__swiper', {
+	  // Optional parameters
+	  loop: true,
+	  spaceBetween: 30,
+	  parallax: true,
+	  slidesPerView: 3,
+	  // If we need pagination
+	  pagination: {
+	    el: '.slider-tricks__dots',
+	    clickable: true
+	  },
+
+	  // Navigation arrows
+	  navigation: {
+	    nextEl: '.slider-tricks__arrows .slider-arrow--next',
+	    prevEl: '.slider-tricks__arrows .slider-arrow--prev',
+	  },
+	  breakpoints: {
+	  	320: {
+	  		slidesPerView: 1.1,
+	  		spaceBetween: 15,
+	  	},
+	  	768: {
+	  		slidesPerView: 2,
+	  		spaceBetween: 20,
+	  	},
+		  992: {
+		  		slidesPerView: 3,
+		  		spaceBetween: 30
+		  	}
+	    }
+	  
+	});
+
+
 });

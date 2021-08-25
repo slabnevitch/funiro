@@ -1,0 +1,19 @@
+section.tricks
+	.tricks__container.wrapper
+		.tricks__title.title Tips & Tricks
+		.tricks__swiper.swiper
+			.tricks__slider.slider-tricks.swiper-wrapper
+				- for (var i=0; i < 4; i++)
+					.slider-tricks__slide.swiper-slide
+						.slider-tricks__img._fit
+							img(src="img/tips/01.jpg")
+						
+						.slider-tricks__content
+							.slider-tricks__title How to create a living room to love
+							.slider-tricks__text 20 jan 2020
+
+			.slider-tricks__arrows.slider-arrows
+				button(type="button").slider-arrow.slider-arrow--prev.icon-arrow-down
+				button(type="button").slider-arrow.slider-arrow--next.icon-arrow-down
+
+			.slider-tricks__dots.swiper-pagination

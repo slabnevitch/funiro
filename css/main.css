@@ -2082,6 +2082,55 @@ button {
   }
 }
 
+.tricks {
+  padding: 44px 0;
+}
+
+.tricks__title {
+  margin-bottom: 0;
+}
+
+.tricks__swiper {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 20px;
+}
+
+.slider-tricks__slide {
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.slider-tricks__img {
+  padding-bottom: 64.19437%;
+}
+
+.slider-tricks__content {
+  padding: 16px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.slider-tricks__title {
+  font-family: "Gilroy-SemiBold", sans-serif;
+  margin-bottom: 5px;
+  line-height: 150%;
+}
+
 .footer__body {
   display: -ms-grid;
   display: grid;
