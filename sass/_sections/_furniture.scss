@@ -1,0 +1,43 @@
+.furniture {
+	@include adaptive-value("padding-bottom", 85, 40, 1);
+}
+.furniture__container {}
+.furniture__label {
+	text-align: center;
+	color: $dark-gray;
+	font-size: 20px;
+	margin-bottom: 8px;
+}
+.furniture__title {
+	margin: 32px;
+}
+.title {}
+.furniture__body {
+	position: relative;
+	@media (any-hover: none) { //только для устройств без ховера ставим скролл
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		
+	}
+}
+.furniture__items {
+	display: grid;
+	grid-template-columns: auto;
+	grid-auto-flow: column;
+	align-items: center;
+	gap: 16px;
+	
+	@media (any-hover: hover) { //только для устройств с ховером, выравниваем эл-ты. по центру(вертикаль)
+		// на мобильниках будут по левому краю
+		justify-content: center;
+	}
+}
+.furniture__column {}
+.furniture__row {}
+.row-furniture {}
+.row-furniture--left-top {}
+.row-furniture__item {}
+.row-furniture--left-bottom {}
+.row-furniture--center {}
+.row-furniture--right-top {}
+.row-furniture--right-bottom {}

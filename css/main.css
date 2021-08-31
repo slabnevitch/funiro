@@ -2131,6 +2131,61 @@ button {
   line-height: 150%;
 }
 
+.furniture {
+  padding-bottom: 85px;
+}
+
+@media (max-width: 1270px) {
+  .furniture {
+    padding-bottom: -webkit-calc(40px + 45 * ((100vw - 320px) / 950));
+    padding-bottom: calc(40px + 45 * ((100vw - 320px) / 950));
+  }
+}
+
+.furniture__label {
+  text-align: center;
+  color: #D8D8D8;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.furniture__title {
+  margin: 32px;
+}
+
+.furniture__body {
+  position: relative;
+}
+
+@media (any-hover: none) {
+  .furniture__body {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.furniture__items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (any-hover: hover) {
+  .furniture__items {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
 .footer__body {
   display: -ms-grid;
   display: grid;
