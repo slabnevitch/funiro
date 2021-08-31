@@ -1,4 +1,3 @@
-@import "https://unpkg.com/swiper/swiper-bundle.min.css";
 @font-face {
   font-family: 'lg';
   src: url("../fonts/lightgallery/lg.woff2?io9a6k") format("woff2"), url("../fonts/lightgallery/lg.ttf?io9a6k") format("truetype"), url("../fonts/lightgallery/lg.woff?io9a6k") format("woff"), url("../fonts/lightgallery/lg.svg?io9a6k#lg") format("svg");
@@ -28,7 +27,6 @@
 .lg-next,
 .lg-prev {
   background-color: rgba(0, 0, 0, 0.45);
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   color: #999;
   cursor: pointer;
@@ -87,6 +85,30 @@
   }
 }
 
+@-moz-keyframes lg-right-end {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -30px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-ms-keyframes lg-right-end {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -30px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 @keyframes lg-right-end {
   0% {
     left: 0;
@@ -100,6 +122,30 @@
 }
 
 @-webkit-keyframes lg-left-end {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 30px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-moz-keyframes lg-left-end {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 30px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-ms-keyframes lg-left-end {
   0% {
     left: 0;
   }
@@ -125,12 +171,14 @@
 
 .lg-outer.lg-right-end .lg-object {
   -webkit-animation: lg-right-end 0.3s;
+  -o-animation: lg-right-end 0.3s;
   animation: lg-right-end 0.3s;
   position: relative;
 }
 
 .lg-outer.lg-left-end .lg-object {
   -webkit-animation: lg-left-end 0.3s;
+  -o-animation: lg-left-end 0.3s;
   animation: lg-left-end 0.3s;
   position: relative;
 }
@@ -144,8 +192,6 @@
 }
 
 .lg-media-overlap .lg-toolbar {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.4)));
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
 
@@ -163,10 +209,10 @@
   outline: medium none;
   will-change: color;
   -webkit-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
   transition: color 0.2s linear;
   background: none;
   border: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -202,6 +248,7 @@
   z-index: 1080;
   opacity: 0;
   -webkit-transition: opacity 0.2s ease-out 0s;
+  -o-transition: opacity 0.2s ease-out 0s;
   transition: opacity 0.2s ease-out 0s;
 }
 
@@ -225,8 +272,6 @@
 }
 
 .lg-media-overlap .lg-sub-html {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.6)));
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
 }
 
@@ -258,16 +303,17 @@
 .lg-closing .lg-sub-html {
   opacity: 0;
   -webkit-transition: -webkit-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
-  -webkit-transition: opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear, -webkit-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear, -webkit-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition: -moz-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
+  -o-transition: -o-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
   transition: transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
-  transition: transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear, -webkit-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-object {
   opacity: 0;
   will-change: opacity;
   -webkit-transition: opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
+  -moz-transition: opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
+  -o-transition: opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
   transition: opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
 }
 
@@ -285,6 +331,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer .lg-thumb-outer.lg-grab .lg-thumb-item {
   cursor: -webkit-grab;
+  cursor: -moz-grab;
   cursor: -o-grab;
   cursor: -ms-grab;
   cursor: grab;
@@ -293,6 +340,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer .lg-thumb-outer.lg-grabbing .lg-thumb-item {
   cursor: move;
   cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
   cursor: grabbing;
@@ -343,7 +391,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   float: left;
   overflow: hidden;
   height: 100%;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   margin-bottom: 5px;
   will-change: border-color;
@@ -351,10 +398,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 @media (min-width: 768px) {
   .lg-outer .lg-thumb-item {
-    -webkit-border-radius: 4px;
     border-radius: 4px;
     border: 2px solid #fff;
     -webkit-transition: border-color 0.25s ease;
+    -o-transition: border-color 0.25s ease;
     transition: border-color 0.25s ease;
   }
 }
@@ -366,7 +413,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer .lg-thumb-item img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
@@ -420,6 +466,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 0;
   will-change: opacity;
   -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
   transition: opacity 0.3s ease-in;
 }
 
@@ -430,21 +477,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer .lg-has-video.lg-video-loaded .lg-video-object {
   opacity: 1;
-}
-
-@-webkit-keyframes lg-play-stroke {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -35px;
-  }
-  100% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -124px;
-  }
 }
 
 @keyframes lg-play-stroke {
@@ -459,13 +491,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -124px;
-  }
-}
-
-@-webkit-keyframes lg-play-rotate {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
   }
 }
 
@@ -484,15 +509,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   left: 50%;
   z-index: 2;
   cursor: pointer;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-  -ms-transform: translate(-50%, -50%) scale(1);
   transform: translate(-50%, -50%) scale(1);
   will-change: opacity, transform;
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28), opacity 0.1s;
-  -webkit-transition: opacity 0.1s, -webkit-transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28);
-  transition: opacity 0.1s, -webkit-transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28);
+  -moz-transition: -moz-transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28), opacity 0.1s;
+  -o-transition: -o-transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28), opacity 0.1s;
   transition: transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28), opacity 0.1s;
-  transition: transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28), opacity 0.1s, -webkit-transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28);
 }
 
 .lg-video-play-button:hover .lg-video-play-icon-bg,
@@ -507,6 +529,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 0.6;
   will-change: opacity;
   -webkit-transition: opacity 0.12s ease-in;
+  -o-transition: opacity 0.12s ease-in;
   transition: opacity 0.12s ease-in;
 }
 
@@ -531,11 +554,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   max-width: 120px;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
   opacity: 0.6;
   will-change: opacity;
   -webkit-transition: opacity 0.12s ease-in;
+  -o-transition: opacity 0.12s ease-in;
   transition: opacity 0.12s ease-in;
 }
 
@@ -544,14 +567,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-video-loading .lg-video-play-icon-circle {
-  -webkit-animation: lg-play-rotate 2s linear 0.25s infinite, lg-play-stroke 1.5s ease-in-out 0.25s infinite;
   animation: lg-play-rotate 2s linear 0.25s infinite, lg-play-stroke 1.5s ease-in-out 0.25s infinite;
 }
 
 .lg-video-loaded .lg-video-play-button {
   opacity: 0;
-  -webkit-transform: translate(-50%, -50%) scale(0.7);
-  -ms-transform: translate(-50%, -50%) scale(0.7);
   transform: translate(-50%, -50%) scale(0.7);
 }
 
@@ -566,6 +586,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 0;
   will-change: opacity;
   -webkit-transition: opacity 0.08s ease 0s;
+  -moz-transition: opacity 0.08s ease 0s;
+  -o-transition: opacity 0.08s ease 0s;
   transition: opacity 0.08s ease 0s;
 }
 
@@ -605,23 +627,24 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer.lg-use-transition-for-zoom .lg-item.lg-complete.lg-zoomable .lg-img-wrap {
   will-change: transform;
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s;
-  transition: -webkit-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s;
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s;
+  -o-transition: -o-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s;
   transition: transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s;
-  transition: transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s, -webkit-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s;
 }
 
 .lg-outer.lg-use-transition-for-zoom.lg-zoom-drag-transition .lg-item.lg-complete.lg-zoomable .lg-img-wrap {
   will-change: transform;
   -webkit-transition: -webkit-transform 0.8s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: -webkit-transform 0.8s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition: -moz-transform 0.8s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -o-transition: -o-transform 0.8s cubic-bezier(0, 0, 0.25, 1) 0s;
   transition: transform 0.8s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: transform 0.8s cubic-bezier(0, 0, 0.25, 1) 0s, -webkit-transform 0.8s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-outer .lg-item.lg-complete.lg-zoomable .lg-img-wrap {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -631,14 +654,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transform: scale3d(1, 1, 1);
   will-change: opacity, transform;
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s, opacity 0.15s !important;
-  -webkit-transition: opacity 0.15s, -webkit-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s !important;
-  transition: opacity 0.15s, -webkit-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s !important;
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s, opacity 0.15s !important;
+  -o-transition: -o-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s, opacity 0.15s !important;
   transition: transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s, opacity 0.15s !important;
-  transition: transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s, opacity 0.15s, -webkit-transform 0.5s cubic-bezier(0.12, 0.415, 0.01, 1.19) 0s !important;
   -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -710,7 +734,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-pager-cont.lg-pager-active .lg-pager {
-  -webkit-box-shadow: 0 0 0 2px white inset;
   box-shadow: 0 0 0 2px white inset;
 }
 
@@ -726,13 +749,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 5px;
   position: absolute;
   width: 120px;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   will-change: transform, opacity;
   -webkit-transition: opacity 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
-  transition: opacity 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
+  -moz-transition: opacity 0.15s ease 0s, -moz-transform 0.15s ease 0s;
+  -o-transition: opacity 0.15s ease 0s, -o-transform 0.15s ease 0s;
   transition: opacity 0.15s ease 0s, transform 0.15s ease 0s;
-  transition: opacity 0.15s ease 0s, transform 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
   -webkit-transform: translate3d(0, 5px, 0);
   transform: translate3d(0, 5px, 0);
 }
@@ -744,22 +766,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer .lg-pager {
   background-color: rgba(255, 255, 255, 0.5);
-  -webkit-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.7) inset;
   box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.7) inset;
   display: block;
   height: 12px;
   -webkit-transition: box-shadow 0.3s ease 0s;
-  -webkit-transition: -webkit-box-shadow 0.3s ease 0s;
-  transition: -webkit-box-shadow 0.3s ease 0s;
+  -o-transition: box-shadow 0.3s ease 0s;
   transition: box-shadow 0.3s ease 0s;
-  transition: box-shadow 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
   width: 12px;
 }
 
 .lg-outer .lg-pager:hover, .lg-outer .lg-pager:focus {
-  -webkit-box-shadow: 0 0 0 8px white inset;
   box-shadow: 0 0 0 8px white inset;
 }
 
@@ -798,6 +815,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   visibility: hidden;
   will-change: visibility, opacity;
   -webkit-transition: visibility 0s linear 0.18s, opacity 0.18s linear 0s;
+  -o-transition: visibility 0s linear 0.18s, opacity 0.18s linear 0s;
   transition: visibility 0s linear 0.18s, opacity 0.18s linear 0s;
 }
 
@@ -805,6 +823,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer.lg-dropdown-active .lg-dropdown-overlay {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+  -moz-transform: translate3d(0, 0px, 0);
+  -o-transform: translate3d(0, 0px, 0);
   -ms-transform: translate3d(0, 0px, 0);
   -webkit-transform: translate3d(0, 0px, 0);
   transform: translate3d(0, 0px, 0);
@@ -818,7 +838,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer .lg-dropdown {
   background-color: #fff;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   font-size: 14px;
   list-style-type: none;
@@ -830,15 +849,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   top: 50px;
   opacity: 0;
   visibility: hidden;
+  -moz-transform: translate3d(0, 5px, 0);
+  -o-transform: translate3d(0, 5px, 0);
   -ms-transform: translate3d(0, 5px, 0);
   -webkit-transform: translate3d(0, 5px, 0);
   transform: translate3d(0, 5px, 0);
   will-change: visibility, opacity, transform;
   -webkit-transition: -webkit-transform 0.18s linear 0s, visibility 0s linear 0.5s, opacity 0.18s linear 0s;
-  -webkit-transition: visibility 0s linear 0.5s, opacity 0.18s linear 0s, -webkit-transform 0.18s linear 0s;
-  transition: visibility 0s linear 0.5s, opacity 0.18s linear 0s, -webkit-transform 0.18s linear 0s;
+  -moz-transition: -moz-transform 0.18s linear 0s, visibility 0s linear 0.5s, opacity 0.18s linear 0s;
+  -o-transition: -o-transform 0.18s linear 0s, visibility 0s linear 0.5s, opacity 0.18s linear 0s;
   transition: transform 0.18s linear 0s, visibility 0s linear 0.5s, opacity 0.18s linear 0s;
-  transition: transform 0.18s linear 0s, visibility 0s linear 0.5s, opacity 0.18s linear 0s, -webkit-transform 0.18s linear 0s;
 }
 
 .lg-outer .lg-dropdown:after {
@@ -936,13 +956,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   z-index: 9999;
   background-color: #fff;
   will-change: transform;
+  -moz-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: -webkit-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition: -moz-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -o-transition: -o-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
   transition: transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s, -webkit-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-comment-box .lg-comment-title {
@@ -991,6 +1013,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   color: #999;
   will-change: color;
   -webkit-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
 
@@ -1024,6 +1047,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   visibility: hidden;
   will-change: visibility, opacity;
   -webkit-transition: visibility 0s linear 0.18s, opacity 0.18s linear 0s;
+  -o-transition: visibility 0s linear 0.18s, opacity 0.18s linear 0s;
   transition: visibility 0s linear 0.18s, opacity 0.18s linear 0s;
 }
 
@@ -1034,6 +1058,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer.lg-comment-active .lg-comment-overlay {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+  -moz-transform: translate3d(0, 0px, 0);
+  -o-transform: translate3d(0, 0px, 0);
   -ms-transform: translate3d(0, 0px, 0);
   -webkit-transform: translate3d(0, 0px, 0);
   transform: translate3d(0, 0px, 0);
@@ -1046,6 +1072,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer.lg-comment-active .lg-comment-box {
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -1058,9 +1086,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   top: 0;
   bottom: 0;
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: -webkit-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition: -moz-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -o-transition: -o-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
   transition: transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s, -webkit-transform 0.4s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-outer[data-lg-slide-type='video'] .lg-rotate-left,
@@ -1095,22 +1123,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-medium-zoom-item {
-  cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
 
 .lg-medium-zoom .lg-outer {
-  cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 
 .lg-medium-zoom .lg-outer.lg-grab img.lg-object {
-  cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 
 .lg-medium-zoom .lg-outer.lg-grabbing img.lg-object {
-  cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 
@@ -1124,7 +1148,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-relative-caption .lg-outer .lg-relative-caption-item {
   opacity: 0;
   padding: 16px 0;
-  -webkit-transition: 0.5s opacity ease;
   transition: 0.5s opacity ease;
 }
 
@@ -1159,10 +1182,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 0;
   will-change: transform, opacity;
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  -webkit-transition: opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition: -moz-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -o-transition: -o-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
   transition: transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-show-in .lg-toolbar,
@@ -1213,11 +1235,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   will-change: auto;
   overflow: hidden;
   -webkit-transition: opacity 0.15s ease 0s;
+  -o-transition: opacity 0.15s ease 0s;
   transition: opacity 0.15s ease 0s;
 }
 
 .lg-outer * {
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -1244,6 +1268,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer.lg-grab img.lg-object {
   cursor: -webkit-grab;
+  cursor: -moz-grab;
   cursor: -o-grab;
   cursor: -ms-grab;
   cursor: grab;
@@ -1252,6 +1277,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer.lg-grabbing img.lg-object {
   cursor: move;
   cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
   cursor: grabbing;
@@ -1272,6 +1298,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   top: 0;
   bottom: 0;
   -webkit-transition: opacity 0s;
+  -o-transition: opacity 0s;
   transition: opacity 0s;
   white-space: nowrap;
 }
@@ -1345,6 +1372,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 0;
   will-change: opacity;
   -webkit-transition: opacity 0.15s ease 0s;
+  -o-transition: opacity 0.15s ease 0s;
   transition: opacity 0.15s ease 0s;
 }
 
@@ -1382,7 +1410,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer.lg-components-open:not(.lg-zoomed) .lg-sub-html {
   opacity: 1;
-  -webkit-transition: opacity 0.2s ease-out 0.15s;
   transition: opacity 0.2s ease-out 0.15s;
 }
 
@@ -1397,6 +1424,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 0;
   will-change: auto;
   -webkit-transition: opacity 333ms ease-in 0s;
+  -o-transition: opacity 333ms ease-in 0s;
   transition: opacity 333ms ease-in 0s;
 }
 
@@ -1408,11 +1436,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-css3.lg-no-trans .lg-next-slide,
 .lg-css3.lg-no-trans .lg-current {
   -webkit-transition: none 0s ease 0s !important;
+  -moz-transition: none 0s ease 0s !important;
+  -o-transition: none 0s ease 0s !important;
   transition: none 0s ease 0s !important;
 }
 
 .lg-css3.lg-use-css3 .lg-item {
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -1426,21 +1457,23 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-css3.lg-fade .lg-item.lg-prev-slide, .lg-css3.lg-fade .lg-item.lg-next-slide, .lg-css3.lg-fade .lg-item.lg-current {
   -webkit-transition: opacity 0.1s ease 0s;
+  -moz-transition: opacity 0.1s ease 0s;
+  -o-transition: opacity 0.1s ease 0s;
   transition: opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-use-css3 .lg-item.lg-start-progress {
   -webkit-transition: -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
-  transition: -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  -moz-transition: -moz-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  -o-transition: -o-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
-  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
 }
 
 .lg-css3.lg-use-css3 .lg-item.lg-start-end-progress {
   -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
   transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-css3.lg-slide.lg-use-css3 .lg-item {
@@ -1465,10 +1498,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-prev-slide, .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-next-slide, .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-current {
   -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -webkit-transition: opacity 0.1s ease 0s, -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: opacity 0.1s ease 0s, -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
   transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s, -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-container {
@@ -1512,14 +1544,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transform: translate3d(0, 100%, 0);
   will-change: transform;
   -webkit-transition: -webkit-transform 0.35s ease-out 0s;
-  transition: -webkit-transform 0.35s ease-out 0s;
+  -moz-transition: -moz-transform 0.35s ease-out 0s;
+  -o-transition: -o-transform 0.35s ease-out 0s;
   transition: transform 0.35s ease-out 0s;
-  transition: transform 0.35s ease-out 0s, -webkit-transform 0.35s ease-out 0s;
   z-index: 1080;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
 }
-
-/*# sourceMappingURL=maps/libs.css.map */
